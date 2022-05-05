@@ -9,7 +9,7 @@ results=50`)
           poster: movie.poster,
           movie: movie.movie,
           year: movie.year,
-          full_line: movie.full_line,
+          line: movie.full_line,
           director: movie.director,
           audio: movie.audio,
         };

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import wowMoviesApi from '../services/MoviesApi';
+import MovieWowList from './MovieWowList';
 
 function App() {
   const [dataMovie, setDataMovie] = useState([]);
@@ -12,6 +13,7 @@ function App() {
   return (
     <>
       <h1>Owen Wilson's "wow" exclamations in movies</h1>
+      <MovieWowList movies={dataMovie} />
     </>
   );
 }
