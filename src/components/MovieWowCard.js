@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const MovieCard = (props) => {
+const MovieWowCard = (props) => {
   return (
     //<Link>
     <article>
@@ -18,4 +18,4 @@ const MovieCard = (props) => {
   );
 };
 
-export default MovieCard;
+export default MovieWowCard;
