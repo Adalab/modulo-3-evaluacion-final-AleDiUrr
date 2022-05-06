@@ -1,4 +1,5 @@
 import NameMovieFilter from './NameMovieFilter';
+import YearMovieFilter from './YearMovieFilter';
 
 const FiltersWowMovies = (props) => {
   return (
@@ -8,6 +9,12 @@ const FiltersWowMovies = (props) => {
           <NameMovieFilter
             handleFilterName={props.handleFilterName}
             filterNameMovie={props.filterNameMovie}
+          />
+        </div>
+        <div>
+          <YearMovieFilter
+            handleFilterYear={props.handleFilterYear}
+            years={props.years}
           />
         </div>
       </form>
