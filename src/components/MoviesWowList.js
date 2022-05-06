@@ -2,9 +2,9 @@ import MovieCard from './MovieWowCard';
 import '../styles/components/MovieWowList.scss';
 
 const MoviesWowList = (props) => {
-  const movieElement = props.movies.map((movie, index) => {
+  const movieElement = props.movies.map((movie) => {
     return (
-      <li key={index} className="card__text">
+      <li key={movie.id} className="card__text">
         <MovieCard movie={movie} />
       </li>
     );
