@@ -72,7 +72,10 @@ function App() {
                   filterNameMovie={filterNameMovie}
                   years={yearMovies()}
                 />
-                <MovieWowList movies={filteredMovie} />
+                <MovieWowList
+                  movies={filteredMovie}
+                  filterNameMovie={filterNameMovie}
+                />
               </>
             }
           />
