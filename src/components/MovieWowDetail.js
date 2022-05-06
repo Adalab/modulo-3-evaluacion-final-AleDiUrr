@@ -1,8 +1,6 @@
-import { Link } from 'react-router-dom';
-
-const MovieWowCard = (props) => {
+const MovieWowDetail = (props) => {
   return (
-    <Link to={`/movie/${props.movie.id}`}>
+    <section>
       <article>
         <img
           src={props.movie.poster}
@@ -13,9 +11,11 @@ const MovieWowCard = (props) => {
         <h4>{props.movie.movie}</h4>
         <p>{props.movie.line}</p>
         <p>{props.movie.year}</p>
+        <a href={props.movie.audio} targe="blank" alt="quote">
+          Here is the wow
+        </a>
       </article>
-    </Link>
+    </section>
   );
 };
-
-export default MovieWowCard;
+export default MovieWowDetail;

@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { matchPath, useLocation } from 'react-router';
 import wowMoviesApi from '../services/moviesApi';
 import wowMoviesLs from '../services/localStorage';
 import MovieWowList from './MoviesWowList';
 import FiltersWowMovies from './FiltersWowMovies';
+import MovieWowDetail from './MovieWowDetail';
 
 function App() {
   const [dataMovies, setDataMovies] = useState([]);
   const [filterNameMovie, setFilterNameMovie] = useState('');
-  const [filterYearMovie, setFilterYearMovie] = useState([]);
+  const [filterYearMovie, setFilterYearMovie] = useState('all');
 
   useEffect(() => {
     wowMoviesApi().then((dataClean) => {
@@ -28,13 +31,13 @@ function App() {
   };
 
   const filteredMovie = dataMovies
-    //filtros
+
     .filter((movie) => {
       return movie.movie.toLowerCase().includes(filterNameMovie.toLowerCase());
     })
 
     .filter((year) => {
-      return filterYearMovie === ''
+      return filterYearMovie === 'all'
         ? true
         : parseInt(year.year) === parseInt(filterYearMovie);
     });
@@ -47,16 +50,38 @@ function App() {
     return theYearMovie;
   };
 
+  const { pathname } = useLocation();
+  const dataPath = matchPath('/movie/:movieId', pathname);
+
+  const movieId = dataPath !== null ? dataPath.params.movieId : null;
+  const wowMovie = dataMovies.find((movie) => movie.id === movieId);
   return (
     <>
-      <h1 className="card__text">Owen Wilson's "wow" exclamations in movies</h1>
-      <FiltersWowMovies
-        handleFilterName={handleFilterName}
-        handleFilterYear={handleFilterYear}
-        filterNameMovie={filterNameMovie}
-        years={yearMovies()}
-      />
-      <MovieWowList movies={filteredMovie} />
+      <main>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <h1 className="card__text">
+                  Owen Wilson's "wow" exclamations in movies
+                </h1>
+                <FiltersWowMovies
+                  handleFilterName={handleFilterName}
+                  handleFilterYear={handleFilterYear}
+                  filterNameMovie={filterNameMovie}
+                  years={yearMovies()}
+                />
+                <MovieWowList movies={filteredMovie} />
+              </>
+            }
+          />
+          <Route
+            path="/movie/:movieId"
+            element={<MovieWowDetail movie={wowMovie} />}
+          />
+        </Routes>
+      </main>
     </>
   );
 }
