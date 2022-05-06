@@ -1,7 +1,9 @@
+import { Link } from 'react-router-dom';
+
 const MovieWowDetail = (props) => {
   return (
     <section>
-      <article>
+      <article className="card__text">
         <img
           src={props.movie.poster}
           alt={props.movie.movie}
@@ -10,10 +12,13 @@ const MovieWowDetail = (props) => {
         />
         <h4>{props.movie.movie}</h4>
         <p>{props.movie.line}</p>
-        <p>{props.movie.year}</p>
-        <a href={props.movie.audio} targe="blank" alt="quote">
+        <p>{props.movie.director}</p>
+        <a href={props.movie.audio} target="blank" rel="noopener noreferrer">
           Here is the wow
         </a>
+        <Link to={'/'}>
+          <button type="button">Woowbaaack</button>
+        </Link>
       </article>
     </section>
   );
