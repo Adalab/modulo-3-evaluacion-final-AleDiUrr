@@ -5,7 +5,7 @@ const NameMovieFilter = (props) => {
 
   return (
     <>
-      <label htmlFor="">"Wow" by the name of the movie</label>
+      <label className="filter__text">"Wow" by the name of the movie</label>
       <input
         type="text"
         name="name"

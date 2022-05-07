@@ -59,35 +59,33 @@ function App() {
   const wowMovie = dataMovies.find((movie) => movie.id === movieId);
   return (
     <>
-      <body>
-        <Header />
-        <main>
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  <FiltersWowMovies
-                    handleFilterName={handleFilterName}
-                    handleFilterYear={handleFilterYear}
-                    filterNameMovie={filterNameMovie}
-                    years={yearMovies()}
-                  />
-                  <MovieWowList
-                    movies={filteredMovie}
-                    filterNameMovie={filterNameMovie}
-                  />
-                </>
-              }
-            />
-            <Route
-              path="/movie/:movieId"
-              element={<MovieWowDetail movie={wowMovie} />}
-            />
-          </Routes>
-        </main>
-        <Footer />
-      </body>
+      <Header />
+      <main>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <FiltersWowMovies
+                  handleFilterName={handleFilterName}
+                  handleFilterYear={handleFilterYear}
+                  filterNameMovie={filterNameMovie}
+                  years={yearMovies()}
+                />
+                <MovieWowList
+                  movies={filteredMovie}
+                  filterNameMovie={filterNameMovie}
+                />
+              </>
+            }
+          />
+          <Route
+            path="/movie/:movieId"
+            element={<MovieWowDetail movie={wowMovie} />}
+          />
+        </Routes>
+      </main>
+      <Footer />
     </>
   );
 }

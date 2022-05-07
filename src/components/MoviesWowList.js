@@ -1,5 +1,6 @@
 import MovieCard from './MovieWowCard';
 import '../styles/components/MovieWowList.scss';
+import '../styles/core/Reset.scss';
 
 const MoviesWowList = (props) => {
   const movieElement = () => {

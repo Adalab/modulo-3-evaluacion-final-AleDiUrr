@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import '../styles/components/MovieWowList.scss';
 
 const MovieWowDetail = (props) => {
   return (
@@ -7,8 +8,8 @@ const MovieWowDetail = (props) => {
         <img
           src={props.movie.poster}
           alt={props.movie.movie}
-          width="200"
-          height="200"
+          width="200 px"
+          height="200 px"
         />
         <h4>{props.movie.movie}</h4>
         <p>{props.movie.line}</p>

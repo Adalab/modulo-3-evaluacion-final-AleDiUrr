@@ -14,7 +14,7 @@ const YearMovieFilter = (props) => {
 
   return (
     <>
-      <label>"Wow" by the year of the movie</label>
+      <label className="filter__text">"Wow" by the year of the movie</label>
       <select name="searchYear" /*value={props.years}*/ onChange={handleSelect}>
         <option value="all">All years</option>
         {renderMovieYear()}

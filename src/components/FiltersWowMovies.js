@@ -1,10 +1,11 @@
 import NameMovieFilter from './NameMovieFilter';
 import YearMovieFilter from './YearMovieFilter';
+import '../styles/components/FiltersWowMovies.scss';
 
 const FiltersWowMovies = (props) => {
   return (
     <section>
-      <form onSubmit={(event) => event.preventDefault()}>
+      <form className="filter" onSubmit={(event) => event.preventDefault()}>
         <div>
           <NameMovieFilter
             handleFilterName={props.handleFilterName}
