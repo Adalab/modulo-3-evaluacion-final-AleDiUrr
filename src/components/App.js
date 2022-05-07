@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { matchPath, useLocation } from 'react-router';
 import wowMoviesApi from '../services/moviesApi';
-import wowMoviesLs from '../services/localStorage';
+//import wowMoviesLs from '../services/localStorage';
+import Header from './Header';
+import Footer from './Footer';
 import MovieWowList from './MoviesWowList';
 import FiltersWowMovies from './FiltersWowMovies';
 import MovieWowDetail from './MovieWowDetail';
@@ -57,34 +59,35 @@ function App() {
   const wowMovie = dataMovies.find((movie) => movie.id === movieId);
   return (
     <>
-      <main>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <h1 className="card__text">
-                  Owen Wilson's "wow" exclamations in movies
-                </h1>
-                <FiltersWowMovies
-                  handleFilterName={handleFilterName}
-                  handleFilterYear={handleFilterYear}
-                  filterNameMovie={filterNameMovie}
-                  years={yearMovies()}
-                />
-                <MovieWowList
-                  movies={filteredMovie}
-                  filterNameMovie={filterNameMovie}
-                />
-              </>
-            }
-          />
-          <Route
-            path="/movie/:movieId"
-            element={<MovieWowDetail movie={wowMovie} />}
-          />
-        </Routes>
-      </main>
+      <body>
+        <Header />
+        <main>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <FiltersWowMovies
+                    handleFilterName={handleFilterName}
+                    handleFilterYear={handleFilterYear}
+                    filterNameMovie={filterNameMovie}
+                    years={yearMovies()}
+                  />
+                  <MovieWowList
+                    movies={filteredMovie}
+                    filterNameMovie={filterNameMovie}
+                  />
+                </>
+              }
+            />
+            <Route
+              path="/movie/:movieId"
+              element={<MovieWowDetail movie={wowMovie} />}
+            />
+          </Routes>
+        </main>
+        <Footer />
+      </body>
     </>
   );
 }
