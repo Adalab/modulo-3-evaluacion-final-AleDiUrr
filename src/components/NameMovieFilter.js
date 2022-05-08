@@ -8,7 +8,7 @@ const NameMovieFilter = (props) => {
   return (
     <>
       <input
-        className="filter__name"
+        className="filter__name div1"
         type="text"
         name="name"
         id="name"

@@ -17,8 +17,7 @@ const MoviesWowList = (props) => {
     return (
       <p>
         There is no wow or movie that matches this
-        <strong>"{props.filterNameMovie}</strong>
-        ".
+        <strong> {props.filterNameMovie}</strong>.
       </p>
     );
   };

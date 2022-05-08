@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { matchPath, useLocation } from 'react-router';
 import wowMoviesApi from '../services/moviesApi';
-// import wowMoviesLs from '../services/localStorage';
 import Header from './Header';
 import Footer from './Footer';
 import MovieWowList from './MoviesWowList';
@@ -19,10 +18,6 @@ function App() {
       setDataMovies(dataClean);
     });
   }, []);
-
-  // useEffect(() => {
-  //   wowMoviesLs.set('movies', dataMovies);
-  // }, [dataMovies]);
 
   const handleFilterName = (value) => {
     setFilterNameMovie(value);
