@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router-dom';
 import { matchPath, useLocation } from 'react-router';
 import wowMoviesApi from '../services/moviesApi';
 import Header from './Header';
-import Footer from './Footer';
 import MovieWowList from './MoviesWowList';
 import FiltersWowMovies from './FiltersWowMovies';
 import MovieWowDetail from './MovieWowDetail';
@@ -15,7 +14,19 @@ function App() {
 
   useEffect(() => {
     wowMoviesApi().then((dataClean) => {
-      setDataMovies(dataClean);
+      setDataMovies(
+        dataClean.sort(function (a, b) {
+          const wowA = a.movie.toUpperCase();
+          const wowB = b.movie.toUpperCase();
+          if (wowA < wowB) {
+            return -1;
+          }
+          if (wowA > wowB) {
+            return 1;
+          }
+          return 0;
+        })
+      );
     });
   }, []);
 
@@ -88,7 +99,6 @@ function App() {
           />
         </Routes>
       </main>
-      <Footer />
     </>
   );
 }

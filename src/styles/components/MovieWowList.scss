@@ -1,23 +1,33 @@
 .card {
   &__list {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     margin-top: 60px;
   }
 
   &__text {
     color: grey;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-      'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
-    font-size: 20px;
+    font-size: 15px;
     padding: 20px;
     width: min-content;
     text-decoration: none;
   }
 
+  &__name {
+    color: black;
+  }
+
   &__img {
-    width: 200px;
-    height: 200px;
+    height: auto;
+    width: 300px;
+    box-shadow: 7px 7px 15px #4b433e;
+  }
+
+  &__message {
+    font-size: 50px;
+    text-align: center;
+    width: max-content;
+    margin-left: 100px;
   }
 }

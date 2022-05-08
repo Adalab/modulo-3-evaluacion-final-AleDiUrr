@@ -5,13 +5,14 @@ const MovieWowCard = (props) => {
     <Link to={`/movie/${props.movie.id}`}>
       <article className="card__text">
         <img
+          className="card__img"
           src={props.movie.poster}
           alt={props.movie.movie}
-          width="200 px"
-          height="200 px"
         />
-        <h4>{props.movie.movie}</h4>
-        <p>{props.movie.line}</p>
+        <h4 className="card__name">{props.movie.movie}</h4>
+        <p>
+          -<i>{props.movie.line}</i>{' '}
+        </p>
         <p>{props.movie.year}</p>
       </article>
     </Link>
