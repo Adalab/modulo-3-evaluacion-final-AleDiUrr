@@ -1,3 +1,5 @@
+import '../styles/components/YearMovieFilter.scss';
+
 const YearMovieFilter = (props) => {
   const handleSelect = (e) => {
     props.handleFilterYear(e.target.value);
@@ -14,9 +16,15 @@ const YearMovieFilter = (props) => {
 
   return (
     <>
-      <label className="filter__text">"Wow" by the year of the movie</label>
-      <select name="searchYear" /*value={props.years}*/ onChange={handleSelect}>
-        <option value="all">All years</option>
+      <select
+        className="filter__year"
+        name="searchYear"
+        value={props.filterYearMovie}
+        onChange={handleSelect}
+      >
+        <option className="filter__year" value="all">
+          Year
+        </option>
         {renderMovieYear()}
       </select>
     </>

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { matchPath, useLocation } from 'react-router';
 import wowMoviesApi from '../services/moviesApi';
-//import wowMoviesLs from '../services/localStorage';
+// import wowMoviesLs from '../services/localStorage';
 import Header from './Header';
 import Footer from './Footer';
 import MovieWowList from './MoviesWowList';
@@ -57,6 +57,11 @@ function App() {
 
   const movieId = dataPath !== null ? dataPath.params.movieId : null;
   const wowMovie = dataMovies.find((movie) => movie.id === movieId);
+
+  const handleReset = () => {
+    setFilterNameMovie('');
+    setFilterYearMovie('all');
+  };
   return (
     <>
       <Header />
@@ -70,8 +75,11 @@ function App() {
                   handleFilterName={handleFilterName}
                   handleFilterYear={handleFilterYear}
                   filterNameMovie={filterNameMovie}
+                  filterYearMovie={filterYearMovie}
                   years={yearMovies()}
+                  reset={handleReset}
                 />
+
                 <MovieWowList
                   movies={filteredMovie}
                   filterNameMovie={filterNameMovie}

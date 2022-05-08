@@ -1,3 +1,5 @@
+import '../styles/components/NameMovieFilter.scss';
+
 const NameMovieFilter = (props) => {
   const handleInput = (e) => {
     props.handleFilterName(e.target.value);
@@ -5,11 +7,12 @@ const NameMovieFilter = (props) => {
 
   return (
     <>
-      <label className="filter__text">"Wow" by the name of the movie</label>
       <input
+        className="filter__name"
         type="text"
         name="name"
         id="name"
+        placeholder="Name of the movie"
         value={props.filterNameMovie}
         onChange={handleInput}
       />
