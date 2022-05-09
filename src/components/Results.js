@@ -3,6 +3,13 @@ const Results = (props) => {
     props.handleResults(event.target.value);
   };
 
-  return <input type="number" value={props.results} onChange={handleResults} />;
+  return (
+    <input
+      className="filter__year div2"
+      type="number"
+      value={props.results}
+      onChange={handleResults}
+    />
+  );
 };
 export default Results;

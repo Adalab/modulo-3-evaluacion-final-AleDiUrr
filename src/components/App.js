@@ -72,6 +72,7 @@ function App() {
   const handleReset = () => {
     setFilterNameMovie('');
     setFilterYearMovie('all');
+    setResults(50);
   };
   return (
     <>
