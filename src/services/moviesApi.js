@@ -1,8 +1,8 @@
 import { v4 as uuidv4 } from 'uuid';
 
-const wowMoviesApi = () => {
+const wowMoviesApi = (results) => {
   return fetch(`https://owen-wilson-wow-api.herokuapp.com/wows/random?
-results=50`)
+results=${results}`)
     .then((response) => response.json())
     .then((data) => {
       const dataClean = data.map((movie, index) => {

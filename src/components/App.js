@@ -11,9 +11,10 @@ function App() {
   const [dataMovies, setDataMovies] = useState([]);
   const [filterNameMovie, setFilterNameMovie] = useState('');
   const [filterYearMovie, setFilterYearMovie] = useState('all');
+  const [results, setResults] = useState(50);
 
   useEffect(() => {
-    wowMoviesApi().then((dataClean) => {
+    wowMoviesApi(results).then((dataClean) => {
       setDataMovies(
         dataClean.sort(function (a, b) {
           const wowA = a.movie.toUpperCase();
@@ -28,7 +29,7 @@ function App() {
         })
       );
     });
-  }, []);
+  }, [results]);
 
   const handleFilterName = (value) => {
     setFilterNameMovie(value);
@@ -36,6 +37,10 @@ function App() {
 
   const handleFilterYear = (value) => {
     setFilterYearMovie(value);
+  };
+
+  const handleResults = (value) => {
+    setResults(value);
   };
 
   const filteredMovie = dataMovies
@@ -80,8 +85,10 @@ function App() {
                 <FiltersWowMovies
                   handleFilterName={handleFilterName}
                   handleFilterYear={handleFilterYear}
+                  handleResults={handleResults}
                   filterNameMovie={filterNameMovie}
                   filterYearMovie={filterYearMovie}
+                  results={results}
                   years={yearMovies()}
                   reset={handleReset}
                 />

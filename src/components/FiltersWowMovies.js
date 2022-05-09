@@ -2,6 +2,7 @@ import NameMovieFilter from './NameMovieFilter';
 import YearMovieFilter from './YearMovieFilter';
 import '../styles/components/FiltersWowMovies.scss';
 import Reset from './Reset';
+import Results from './Results';
 
 const FiltersWowMovies = (props) => {
   return (
@@ -17,6 +18,8 @@ const FiltersWowMovies = (props) => {
           years={props.years}
           filterYearMovie={props.filterYearMovie}
         />
+
+        <Results handleResults={props.handleResults} results={props.results} />
 
         <Reset reset={props.reset} />
       </form>
