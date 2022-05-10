@@ -12,6 +12,8 @@ function App() {
   const [filterNameMovie, setFilterNameMovie] = useState('');
   const [filterYearMovie, setFilterYearMovie] = useState('all');
   const [results, setResults] = useState(50);
+  const [filterCharacter, setFilterCharacter] = useState('every');
+  const [filterDirector, setFilterDirector] = useState('all');
 
   useEffect(() => {
     wowMoviesApi(results).then((dataClean) => {
@@ -43,7 +45,26 @@ function App() {
     setResults(value);
   };
 
+  const handleFilterCharacter = (value) => {
+    setFilterCharacter(value);
+  };
+
+  const handleFilterDirector = (value) => {
+    setFilterDirector(value);
+  };
+
   const filteredMovie = dataMovies
+    .filter((director) => {
+      return filterDirector === 'all'
+        ? true
+        : director.director === filterDirector;
+    })
+
+    .filter((character) => {
+      return filterCharacter === 'every'
+        ? true
+        : character.character === filterCharacter;
+    })
 
     .filter((movie) => {
       return movie.movie.toLowerCase().includes(filterNameMovie.toLowerCase());
@@ -63,6 +84,22 @@ function App() {
     return theYearMovie;
   };
 
+  const characterMovies = () => {
+    const movieCharacters = dataMovies.map((character) => character.character);
+    const theCharacterMovie = movieCharacters.filter((character, index) => {
+      return movieCharacters.indexOf(character) === index;
+    });
+    return theCharacterMovie;
+  };
+
+  const directorMovies = () => {
+    const movieDirector = dataMovies.map((director) => director.director);
+    const theDirectorMovie = movieDirector.filter((director, index) => {
+      return movieDirector.indexOf(director) === index;
+    });
+    return theDirectorMovie;
+  };
+
   const { pathname } = useLocation();
   const dataPath = matchPath('/movie/:movieId', pathname);
 
@@ -73,6 +110,7 @@ function App() {
     setFilterNameMovie('');
     setFilterYearMovie('all');
     setResults(50);
+    setFilterDirector('all');
   };
   return (
     <>
@@ -87,10 +125,16 @@ function App() {
                   handleFilterName={handleFilterName}
                   handleFilterYear={handleFilterYear}
                   handleResults={handleResults}
+                  handleFilterCharacter={handleFilterCharacter}
+                  handleFilterDirector={handleFilterDirector}
                   filterNameMovie={filterNameMovie}
                   filterYearMovie={filterYearMovie}
+                  filterCharacter={filterCharacter}
+                  filterDirector={filterDirector}
                   results={results}
                   years={yearMovies()}
+                  characters={characterMovies()}
+                  directors={directorMovies()}
                   reset={handleReset}
                 />
 

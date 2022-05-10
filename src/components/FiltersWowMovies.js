@@ -3,6 +3,8 @@ import YearMovieFilter from './YearMovieFilter';
 import '../styles/components/FiltersWowMovies.scss';
 import Reset from './Reset';
 import Results from './Results';
+import CharacterFilter from './CharacterFilter';
+import DirectorMovieFilter from './DirectorFilter';
 
 const FiltersWowMovies = (props) => {
   return (
@@ -17,6 +19,17 @@ const FiltersWowMovies = (props) => {
           handleFilterYear={props.handleFilterYear}
           years={props.years}
           filterYearMovie={props.filterYearMovie}
+        />
+        <CharacterFilter
+          handleFilterCharacter={props.handleFilterCharacter}
+          characters={props.characters}
+          filterCharacter={props.filterCharacter}
+        />
+
+        <DirectorMovieFilter
+          handleFilterDirector={props.handleFilterDirector}
+          directors={props.directors}
+          filterDirector={props.filterDirector}
         />
 
         <Results handleResults={props.handleResults} results={props.results} />

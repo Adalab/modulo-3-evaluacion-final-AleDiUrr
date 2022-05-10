@@ -14,6 +14,7 @@ results=${results}`)
           line: movie.full_line,
           director: movie.director,
           audio: movie.audio,
+          character: movie.character,
         };
       });
       return dataClean;
