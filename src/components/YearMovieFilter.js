@@ -17,7 +17,7 @@ const YearMovieFilter = (props) => {
   return (
     <>
       <select
-        className="filter__year div2"
+        className="filter__year"
         name="searchYear"
         value={props.filterYearMovie}
         onChange={handleSelect}

@@ -1,3 +1,5 @@
+import '../styles/components/DirectorFilter.scss';
+
 const DirectorMovieFilter = (props) => {
   const handleDirector = (event) => {
     props.handleFilterDirector(event.target.value);
@@ -14,11 +16,11 @@ const DirectorMovieFilter = (props) => {
   return (
     <>
       <select
-        className="filter__year div2"
+        className="filter__director"
         value={props.filterDirector}
         onChange={handleDirector}
       >
-        <option className="filter__year" value="all">
+        <option className="filter__director" value="all">
           Director
         </option>
         {renderDirectors()}

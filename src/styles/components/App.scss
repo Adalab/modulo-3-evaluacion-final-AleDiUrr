@@ -1,0 +1,9 @@
+@import '../core/Normalize.scss';
+@import '../core/Reset.scss';
+@import '../core/Variables.scss';
+
+.app__wrapper {
+  width: 100%;
+  min-height: 100vh;
+  color: $col_white;
+}

@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
 import '../styles/components/MovieWowList.scss';
 import '../styles/components/MovieWowDetail.scss';
+import ButtonPlayWow from './ButtonPlayWow';
 
 const MovieWowDetail = (props) => {
   return (
-    <section>
+    <section className="detail__wrapper">
       <article className="detail__card">
         <img
           className="detail__img"
@@ -12,18 +13,16 @@ const MovieWowDetail = (props) => {
           alt={props.movie.movie}
         />
         <h4 className="detail__name">
-          Name: <strong>{props.movie.movie}</strong>
+          <strong>Film title:</strong> {props.movie.movie}
         </h4>
-        <p className="detail__quote"> Quote: {props.movie.line}</p>
-        <p>Director: {props.movie.director}</p>
-        <a
-          className="detail__name"
-          href={props.movie.audio}
-          target="blank"
-          rel="noopener noreferrer"
-        >
-          Here is the wow
-        </a>
+        <p className="detail__quote">
+          <strong>Quote:</strong>
+          <i>{props.movie.line}</i>
+        </p>
+        <p>
+          <strong>Directed by:</strong> {props.movie.director}
+        </p>
+        <ButtonPlayWow audio={props.movie.audio} />
         <Link to={'/'}>
           <button type="button">Woowbaaack</button>
         </Link>

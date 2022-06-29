@@ -8,11 +8,11 @@ const NameMovieFilter = (props) => {
   return (
     <>
       <input
-        className="filter__name div1"
+        className="filter__name"
         type="text"
         name="name"
         id="name"
-        placeholder="Name of the movie"
+        placeholder="Movie"
         value={props.filterNameMovie}
         onChange={handleInput}
       />

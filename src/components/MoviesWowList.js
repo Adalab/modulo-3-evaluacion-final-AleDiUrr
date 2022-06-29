@@ -15,10 +15,17 @@ const MoviesWowList = (props) => {
     }
 
     return (
-      <span className="card__message">
-        There is no wow or movie that matches this
-        <strong> {props.filterNameMovie}</strong> :(
-      </span>
+      <div className="movie-no-results">
+        <span className="movie-no-results__wrapper">
+          <h2 className="wrapper__title"> Wooooooooow!</h2>
+          <p className="wrapper__subtitle">
+            No results for:{' '}
+            <strong className="wrapper__subtitle">
+              {props.filterNameMovie}
+            </strong>
+          </p>
+        </span>
+      </div>
     );
   };
   return (

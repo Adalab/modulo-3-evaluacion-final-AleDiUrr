@@ -1,26 +1,51 @@
+@import '../core/Normalize.scss';
+@import '../core/Reset';
+@import '../core/Variables';
+
 .detail {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    height: 100vh;
+
+    background-color: rgba(106, 99, 99, 0.11);
+  }
   &__card {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     color: gray;
-    height: 90vh;
+    height: 100vh;
     margin-bottom: 40px;
   }
   &__img {
-    width: 20vw;
+    width: 150rem;
     box-shadow: 7px 7px 15px #4b433e;
     border-radius: 20px;
+    margin: 50rem 0 0 0;
+
+    @media (min-width: 768px) {
+      width: auto;
+      height: 60vh;
+    }
   }
 
   &__name {
     margin-top: 10px;
     width: 60vw;
     text-align: center;
+    @media (min-width: 768px) {
+      font-size: 30rem;
+    }
   }
   &__quote {
     color: gray;
-    padding-bottom: 20px;
+    @media (min-width: 768px) {
+      font-size: 20rem;
+    }
   }
 }

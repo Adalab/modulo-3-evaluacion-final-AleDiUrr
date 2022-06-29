@@ -1,8 +1,25 @@
+@import '../core/Normalize.scss';
+@import '../core/Reset';
+@import '../core/Variables';
+
 .filter__name {
   width: 100%;
-  height: 50px;
-  font-size: 20px;
-  border: solid gray;
-  border-radius: 20px;
+  max-width: 200rem;
+  height: 30rem;
+
+  color: gray;
+
   text-align: center;
+  border: 1px solid #c4c4c4;
+  background-color: rgba(255, 255, 255, 0.01);
+  border-radius: 20rem;
+  &:hover {
+    border: 1px solid purple;
+    box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+  }
+
+  @media (min-width: 768px) {
+    max-width: 300rem;
+    height: 48rem;
+  }
 }

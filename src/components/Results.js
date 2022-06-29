@@ -1,3 +1,5 @@
+import '../styles/components/Results.scss';
+
 const Results = (props) => {
   const handleResults = (event) => {
     props.handleResults(event.target.value);
@@ -5,7 +7,7 @@ const Results = (props) => {
 
   return (
     <input
-      className="filter__year div2"
+      className="results"
       type="number"
       value={props.results}
       onChange={handleResults}

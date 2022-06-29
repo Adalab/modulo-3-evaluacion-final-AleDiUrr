@@ -1,0 +1,11 @@
+.btn__play {
+  color: rgb(35, 34, 35);
+
+  animation: btn__play 5s infinite;
+
+  @keyframes btn__play {
+    100% {
+      transform: scale(2);
+    }
+  }
+}

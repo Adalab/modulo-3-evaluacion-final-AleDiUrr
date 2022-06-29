@@ -1,3 +1,5 @@
+import '../styles/components/CharacterFilter.scss';
+
 const CharacterFilter = (props) => {
   const handleCharacters = (event) => {
     props.handleFilterCharacter(event.target.value);
@@ -15,7 +17,7 @@ const CharacterFilter = (props) => {
   return (
     <>
       <select
-        className="filter__year div2"
+        className="filter__character"
         value={props.filterCharacter}
         onChange={handleCharacters}
       >

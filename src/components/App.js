@@ -10,10 +10,10 @@ import MovieWowDetail from './MovieWowDetail';
 function App() {
   const [dataMovies, setDataMovies] = useState([]);
   const [filterNameMovie, setFilterNameMovie] = useState('');
+  const [filterDirector, setFilterDirector] = useState('all');
   const [filterYearMovie, setFilterYearMovie] = useState('all');
   const [results, setResults] = useState(50);
   const [filterCharacter, setFilterCharacter] = useState('every');
-  const [filterDirector, setFilterDirector] = useState('all');
 
   useEffect(() => {
     wowMoviesApi(results).then((dataClean) => {
@@ -114,23 +114,23 @@ function App() {
   };
   return (
     <>
-      <Header />
-      <main>
+      <main className="app__wrapper">
         <Routes>
           <Route
             path="/"
             element={
               <>
+                <Header />
                 <FiltersWowMovies
+                  filterNameMovie={filterNameMovie}
+                  filterDirector={filterDirector}
+                  filterCharacter={filterCharacter}
+                  filterYearMovie={filterYearMovie}
                   handleFilterName={handleFilterName}
                   handleFilterYear={handleFilterYear}
                   handleResults={handleResults}
                   handleFilterCharacter={handleFilterCharacter}
                   handleFilterDirector={handleFilterDirector}
-                  filterNameMovie={filterNameMovie}
-                  filterYearMovie={filterYearMovie}
-                  filterCharacter={filterCharacter}
-                  filterDirector={filterDirector}
                   results={results}
                   years={yearMovies()}
                   characters={characterMovies()}
