@@ -8,8 +8,8 @@ const Header = (props) => {
         <img
           className="header__img"
           src={Logo}
-          title="logo of owen wilson"
-          alt="logo owen wilson"
+          title="owen wilson logo"
+          alt="owen wilson logo"
         />
       </div>
     </header>

@@ -111,6 +111,7 @@ function App() {
     setFilterYearMovie('all');
     setResults(50);
     setFilterDirector('all');
+    setFilterCharacter('every');
   };
   return (
     <>
