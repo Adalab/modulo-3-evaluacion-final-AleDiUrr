@@ -23,8 +23,7 @@ Este repositorio es la evaluación final del módulo de React para demostrar que
 
 El ejercicio consiste en desarrollar una aplicación que reuna todas de peliculas donde actor Owen Wilson dijo "Wow" y poder buscarlas por su nombre o año.
 
-La primera parte del ejercicio es conseguir listar las pélicuas con los datos conseguidos de la página oficial del Api https://owen-wilson-wow-
-api.herokuapp.com/. Luego de tener las péliculas listadas los siguientes pasos son filtrar por el nombre de cada pélicula y por el año.
+La primera parte del ejercicio es conseguir listar las pélicuas con los datos conseguidos de la página oficial del Api https://owen-wilson-wow-api.herokuapp.com/. Luego de tener las péliculas listadas los siguientes pasos son filtrar por el nombre de cada pélicula y por el año.
 
 Para esto es importante tener unos componentes básicos, en este caso son: 
 
@@ -44,5 +43,4 @@ Componente del filtro por año.
 
 ## ¿Y dónde puedo ver la página web?
 
-Haz click en el siguiente enlace alexdiaur.github.io/owen-wilson-wow-alexadiaur/¡y disfruta de todos los Wooooow de Owen Wilson! :open_mouth: :upside_down_face:  
-
+Haz click en https://alexdiaur.github.io/owen-wilson-wow-alexadiaur/ ¡y disfruta de todos los Wooooow de Owen Wilson! :open_mouth: :upside_down_face:
