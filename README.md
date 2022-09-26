@@ -44,5 +44,5 @@ Componente del filtro por año.
 
 ## ¿Y dónde puedo ver la página web?
 
-Haz click en el siguiente enlace https://alexdiaur.github.io/modulo-3-evaluacion-final-AleDiUrr/ ¡y disfruta de todos los Wooooow de Owen Wilson! :open_mouth: :upside_down_face:  
+Haz click en el siguiente enlace alexdiaur.github.io/owen-wilson-wow-alexadiaur/ ¡y disfruta de todos los Wooooow de Owen Wilson! :open_mouth: :upside_down_face:  
 
